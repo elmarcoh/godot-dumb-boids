@@ -1,8 +1,7 @@
 extends CharacterBody3D
+class_name Boid
 
 @onready var group: Area3D = $GroupDetector
-@onready var entropy_timer: Timer = $EntropyTimer
-@onready var neighbor_detect_timer: Timer = $NeighborDetectTimer
 
 @export var turn_rate: float = PI/2.0 # deg/sec
 @export var target: Node3D
@@ -38,7 +37,7 @@ func _physics_process(delta: float) -> void:
 func separation_vec() -> Vector3:
 	var direction: Vector3 = Vector3.ZERO
 	for body in group.get_overlapping_bodies():
-		printt(body, body == self)
+		# printt(body, body == self)
 		if body != self:
 			var local_pos = to_local(body.position)
 			direction -= local_pos.normalized()
