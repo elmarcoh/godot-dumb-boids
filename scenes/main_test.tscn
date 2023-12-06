@@ -34,20 +34,27 @@ script = ExtResource("1_6hfg5")
 [node name="BoidGroup" type="Node3D" parent="."]
 
 [node name="Boid" parent="BoidGroup" node_paths=PackedStringArray("target") instance=ExtResource("2_s5yi1")]
+turn_rate = 1.571
 target = NodePath("../../Target")
-speed = 7.0
+max_speed = 7.0
 
 [node name="Boid2" parent="BoidGroup" node_paths=PackedStringArray("target") instance=ExtResource("2_s5yi1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.921827, 0, 0)
+turn_rate = 1.571
 target = NodePath("../../Target")
-speed = 7.0
+max_speed = 7.0
 
 [node name="Boid3" parent="BoidGroup" node_paths=PackedStringArray("target") instance=ExtResource("2_s5yi1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.82172, 0, 0)
+turn_rate = 1.571
 target = NodePath("../../Target")
-speed = 7.0
+max_speed = 7.0
 
 [node name="Boid4" parent="BoidGroup" node_paths=PackedStringArray("target") instance=ExtResource("2_s5yi1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02289, 0, 0)
+turn_rate = 1.571
 target = NodePath("../../Target")
-speed = 7.0
+max_speed = 7.0
 
 [node name="Target" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.63129, 4.7293, -0.151704)
