@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://44xabow4yv53"]
+
+[ext_resource type="Script" path="res://scripts/boid.gd" id="1_l1qvw"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ne5t8"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_joa8y"]
+top_radius = 0.0
+bottom_radius = 0.25
+height = 1.0
+radial_segments = 6
+rings = 1
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_yufhd"]
+radius = 1.5
+
+[node name="Boid" type="CharacterBody3D"]
+script = ExtResource("1_l1qvw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_ne5t8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 0.3, 0, -1, -1.31134e-08, 0, 0, 0)
+mesh = SubResource("CylinderMesh_joa8y")
+
+[node name="GroupDetector" type="Area3D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GroupDetector"]
+shape = SubResource("SphereShape3D_yufhd")
