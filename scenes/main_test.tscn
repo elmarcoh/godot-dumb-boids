@@ -1,20 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://b7h7vj16anc8d"]
+[gd_scene load_steps=7 format=3 uid="uid://b7h7vj16anc8d"]
 
+[ext_resource type="Texture2D" uid="uid://b8oymqqjdboer" path="res://assets/skyboxes/Nebula 24 4k_0.png" id="1_3c103"]
 [ext_resource type="Script" path="res://addons/godot-free-look-camera-132062011edfce9399a489756064cfea880dad4c/free_look_camera.gd" id="1_6hfg5"]
 [ext_resource type="Script" path="res://scripts/BoidGroup.gd" id="2_bbqe0"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_m6jxv"]
-sky_top_color = Color(0.247059, 0.494118, 0.521569, 1)
-sky_horizon_color = Color(0.597059, 0.668628, 0.680392, 1)
-ground_bottom_color = Color(0.141176, 0.180392, 0.2, 1)
-ground_horizon_color = Color(0.597059, 0.668628, 0.680392, 1)
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_7ann4"]
+panorama = ExtResource("1_3c103")
 
-[sub_resource type="Sky" id="Sky_2lnqe"]
-sky_material = SubResource("ProceduralSkyMaterial_m6jxv")
+[sub_resource type="Sky" id="Sky_al31a"]
+sky_material = SubResource("PanoramaSkyMaterial_7ann4")
 
 [sub_resource type="Environment" id="Environment_suhu6"]
 background_mode = 2
-sky = SubResource("Sky_2lnqe")
+sky = SubResource("Sky_al31a")
 tonemap_mode = 2
 glow_enabled = true
 
